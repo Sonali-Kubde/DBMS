@@ -93,38 +93,6 @@ Below steps are involved in hiring new employees in the designed Database System
 
 
 
-3.	Query:
-Create function HR.CandidateContactInformation(@ApplicationId int)
-Returns Table
-Return
-(
- select C.Name,C.EmailAddress,C.Phone
- from HR.Candidate c, HR.Application a
- where a.CandidateId=c.CandidateId and a.ApplicationId = @ApplicationId
-);
-
-select * from HR.CandidateContactInformation(1)
-
-This function returns the Candidate’s Contact Information for the given applicationId
- 
-4.	Query:
-Create function HR.StatusForapplication(@ApplicationId int)
-Returns Table
-Return
-(
- select s.statusName
- from HR.StatusChange sc, HR.Status s, HR.Application a
- where sc.ApplicationId=a.ApplicationId and a.ApplicationId = @ApplicationId and sc.StatusId=s.StatusId
-);
- 
-
-F.	Triggers
-1.	Query:
-
-
-
-
-
 
 
 
